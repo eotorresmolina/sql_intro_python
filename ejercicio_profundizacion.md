@@ -54,6 +54,6 @@ if __name__ == "__main__":
 
 ## Para jugar
 Cuando finalicen el ejercicio pueden realizar las siguientes modificaciones:
-- Modificar el nombre de un nombre o creando una función que utilice la sentencia UPDATE y que modifque el título de un libro según el "id" del libro deseado.
+- Modificar el nombre de un nombre o creando una función que utilice la sentencia UPDATE y que modifique el título de un libro según el "id" del libro deseado.
 - Puedo generar una función que utilice la sentencia DELETE para borrar libros que ya no se venden en la librería por nombre del libro (título).
 
