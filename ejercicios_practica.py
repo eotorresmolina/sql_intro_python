@@ -111,7 +111,6 @@ def fetch():
 
     print('\n\n')
 
-    conn.commit()
     conn.close()
 
 
@@ -137,7 +136,6 @@ def search_by_grade(grade):
 
     print('\n')
 
-    conn.commit()
     conn.close()
 
 
@@ -149,7 +147,7 @@ def insert(new_student):
     conn = sqlite3.connect('secundaria.db')
     c = conn.cursor()
     c.execute(""" INSERT INTO estudiante (name, age)
-                    VALUES (?, ?);""", new_student)
+                    VALUES (?, ?);""", (new_student,))
 
     conn.commit()
     conn.close()
@@ -162,7 +160,9 @@ def modify(id, name):
     # modificar su nombre por "name" pasado como parámetro
     conn = sqlite3.connect('secundaria.db')
     c = conn.cursor()
-    c.execute(""" UPDATE estudiante SET name = ? WHERE id = ?;""", (name, id))
+    rowcount = c.execute(""" UPDATE estudiante SET name = ? WHERE id = ?;""", (name, id)).rowcount
+    print('Filas actualizadas:', rowcount)
+
     conn.commit()
     conn.close()
 
