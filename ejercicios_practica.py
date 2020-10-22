@@ -147,7 +147,7 @@ def insert(new_student):
     conn = sqlite3.connect('secundaria.db')
     c = conn.cursor()
     c.execute(""" INSERT INTO estudiante (name, age)
-                    VALUES (?, ?);""", (new_student,))
+                    VALUES (?, ?);""", new_student)
 
     conn.commit()
     conn.close()
